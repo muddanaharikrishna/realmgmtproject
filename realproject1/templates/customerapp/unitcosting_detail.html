@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+
+<div class="container">
+<div class="jumbotron">
+<div align='center' class="main-box">
+
+  <table class="table table-hover table table-striped table table-bordered table table-sm">
+         <thead align='center'>
+           <th>Company Name</th>
+           <th>Actions</th>
+         </thead>
+
+<tr align='center' background='white'>
+
+<td>Flat No :</td><td>{{unitcosting.flatno}}</td>
+
+  <h2>Customer Name :{{unitcosting.cname}}</h2>
+  <h2>Date of Booking :{{unitcosting.bookingdate}}</h2>
+  <h2>Scheme Type :{{unitcosting.scheme}}</h2>
+  <h2>Sft :{{unitcosting.sft}}</h2>
+  <h2>Facing :{{unitcosting.face}}</h2>
+  <h2>Unit Type :{{unitcosting.unittype}}</h2>
+  <h2>Price/Sft :{{unitcosting.price}}</h2>
+  <h2>Premium Charges :{{unitcosting.pcharge}}</h2>
+  <h2>Gross Price :{{unitcosting.grossprice}}</h2>
+  <h2>Discount :{{unitcosting.discount}}</h2>
+  <h2>Net Price :{{unitcosting.netprice}}</h2>
+  <h2>Amenities :{{unitcosting.amenities}}</h2>
+</tr>
+
+</table>
+    <a class="btn btn-success btn-lg" href="/unitcostinglist">Back</a>
+</div>
+</div>
+</div>
+{%endblock%}

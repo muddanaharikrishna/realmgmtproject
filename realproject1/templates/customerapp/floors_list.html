@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+  <h1>List of Floors</h1>
+  <a class="btn btn-success" href="/createfloor">Add Floor</a>
+  <a class="btn btn-primary" href="/">Goto DashBoard</a>
+  <table class="table table-bordered table-sm">
+    <thead align='center'>
+      <th>Floor Name</th>
+      <th>Actions</th>
+    </thead>
+      {%for floors in floors_list%}
+    <tr align='center'>
+      <td>{{floors.name}}</td>
+      <td><a class="btn btn-primary" href="/floordetails/{{floors.id}}">Details</a> <a class="btn btn-warning" href="/updatefloor/{{floors.id}}">Update</a> <a class="btn btn-danger" href="/deletefloor/{{floors.id}}">Delete</a></td>
+    </tr>
+      {%endfor%}
+  </table>
+{%endblock%}

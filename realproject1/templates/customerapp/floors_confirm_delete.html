@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+<div class="card">
+  <h5 class="card-header">Delete record!</h5>
+    <div class="card-body">
+      <form method="post">
+        {%csrf_token%}
+        <h5 class="card-title">Are you sure to delete {{floors.name}} information..?</h5>
+        <p class="card-text">If you click on yes your record will be deleted else click on Cancel for goto home.</p>
+        <input type="submit" class="btn btn-danger" value="   Yes   ">
+        <a href="/floordetails/{{floors.id}}" class="btn btn-success">Cancel</a>
+      </form>
+    </div>
+</div>{%endblock%}

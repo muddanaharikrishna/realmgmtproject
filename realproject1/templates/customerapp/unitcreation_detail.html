@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+<div align='center'>
+  <h1>Details of Unit No.{{unitcreation.flatno}}</h1><hr>
+  <h2>Flat No :{{unitcreation.flatno}}</h2>
+  <h2>Company :{{unitcreation.cname}}</h2>
+  <h2>Block No:{{unitcreation.bname}}</h2>
+  <h2>Floor No:{{unitcreation.floorno}}</h2>
+  <h2>Unit No :{{unitcreation.unitno}}</h2>
+  <h2>Facing  :{{unitcreation.face}}</h2>
+  <h2>Status  :{{unitcreation.status}}</h2>
+    <a class="btn btn-success btn-lg" href="/unitcreationlist">Back</a>
+</div>
+{%endblock%}

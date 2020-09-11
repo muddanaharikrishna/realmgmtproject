@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+  <h1>List of Amenities</h1>
+  <a class="btn btn-success" href="/createamenities">Add Amenities</a>
+  <a class="btn btn-success" href="/">Goto DashBoard</a>
+  <table class="table table-hover table table-striped table table-bordered table table-sm">
+    <thead align='center'>
+      <th>Amenities</th>
+      <th>Cost</th>
+      <th>Actions</th>
+    </thead>
+      {%for amenities in amenities_list%}
+    <tr align='center'>
+      <td>{{amenities.name}}</td>
+      <td>{{amenities.cost}}</td>
+      <td><a class="btn btn-primary" href="/amenitiesdetails/{{amenities.id}}">Details</a> <a class="btn btn-warning" href="/updateamenities/{{amenities.id}}">Update</a> <a class="btn btn-danger" href="/deleteamenities/{{amenities.id}}">Delete</a></td>
+    </tr>
+      {%endfor%}
+  </table>
+{%endblock%}

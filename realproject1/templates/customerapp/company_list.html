@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+
+  <div class="container">
+    <div class="col-sm-9">
+      <div class="table-responsive text-nowrap">
+        <h2>List of Companies</h2>
+
+          <table class="table">
+                  <thead>
+                  <tr>
+                      <th scope="col">S.No</th>
+                      <th scope="col">Company Name</th>
+                      <th scope="col">Actions</th>
+                  </tr>
+                  </thead>
+
+                   <tbody>
+                     {%for company in company_list%}
+                       <tr>
+                           <th scope="row">{{ forloop.counter }}</th>
+                           <td>{{company.name}}</td>
+                            <td>
+                                <a class="btn btn-sm btn-danger float-right ml-2" href="/deletecompany/{{company.id}}">Delete</a>
+                                <a class="btn btn-sm btn-warning float-right ml-2" href="/updatecompany/{{company.id}}">Update</a>
+                                <a class="btn btn-sm btn-primary float-right" href="/companydetails/{{company.id}}">Details</a>
+                            </td>
+                       </tr>
+                    </tbody>
+                  {%endfor%}
+
+                  <tr>
+                    <td colspan="5">
+                      <a class='btn btn-primary float-right ml-2' href='/'>Goto DashBoard</a>
+                      <a class='btn btn-success float-right' href='/createcompany'>Add Company</a>
+                    </td>
+                  </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+{%endblock%}

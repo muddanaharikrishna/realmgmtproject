@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{%extends 'customerapp/index.html'%}
+{%block content%}
+<h3 class="box-title"></h3>
+
+  <div class="container mt-2 mb-2">
+    <div id="toolbar" class="select">
+      <select class="form-control">
+        <option value="">Export Basic</option>
+        <option value="all">Export All</option>
+        <option value="selected">Export Selected</option>
+      </select>
+    </div>
+    <table
+          id="table"
+          data-toggle="table"
+          data-pagination="true"
+          data-search="true"
+          data-search-align="left"
+          data-toolbar="#toolbar"
+          data-show-print="true"
+          data-show-export="true"
+          data-click-to-select="true"
+          data-show-columns="true"
+          data-show-toggle="true"
+          data-show-fullscreen="true"
+          data-show-pagination="ture"
+          data-show-pagination-switch="true"
+          data-pagination-pre-text="previous"
+          data-pagination-next-text="next"
+          data-pagination-h-align="left"
+          data-pagination-detail-h-align="right"
+          data-page-list="[10, 20, 30, 40, 50, All]">
+      <thead id="table-head">
+        <tr>
+        <!--  <th rowspan="2" data-checkbox="false" data-valign="middle"></th> -->
+          <th colspan="7" data-align="center">LIST OF CUSTOMERS</th>
+        </tr>
+        <tr>
+          <th data-field="state" data-checkbox="true" data-visible="false"></th>
+          <th data-field="name" data-sortable="true" data-switchable="false">Customer Name</th>
+          <th data-field="father" data-sortable="true" data-switchable="false">Customer Father Name</th>
+          <th data-field="dob" data-sortable="true">Date of Birth</th>
+          <th data-field="Occupation" data-sortable="true">Occupation</th>
+          <th data-field="mailid" data-sortable="true">Customer Email Address</th>
+          <th data-sortable="false">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for customer in customer_list%}
+      <tr>
+        <td></td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.father|title}}</td>
+        <td>{{customer.dob}}</td>
+        <td>{{customer.Occupation|title}}</td>
+        <td>{{customer.mailid}}</td>
+        <td>
+            <a class="" id="iconbtneye" href="/customerdetails/{{customer.id}}" title="View" tooltip><i class="fas fa-eye"></i></a>&nbsp|
+            <a class="" id="iconbtnstate" href="/"title="Statement" tooltip><i class="fas fa-table"></i></a>&nbsp|
+            <a class="" id="iconbtnedit" href="/update/{{customer.id}}" title="Edit" tooltip><i class="fas fa-edit"></i></a>&nbsp|
+            <a class="" id="iconbtnbin" href="/delete/{{customer.id}}"title="Delete" tooltip><i class="fas fa-trash-alt"></i></a></td>
+      </tr>
+        {%endfor%}
+      </tbody>
+
+      <div class="buttons">
+        <a class="btn btn-success" id="btn-create" href="/create" title="Add Customer" tooltip><i class="fas fa-plus"></i>Add Customer</a>&nbsp|
+        <a class="btn btn-success" id="btn-home" href="/"><i class="fas fa-home-lg-alt"></i> Goto Home</a>
+      </div>
+
+    </table>
+
+  </div>
+
+
+<!--
+<div class="">
+  <a class="btn btn-success" id="btn-create" href="/create" title="Create Unit" tooltip><i class="fas fa-plus" id="iconbtnplus"></i>Add Customer</a>
+  <a class="btn btn-success" id="btn-home" href="/" title="Create Unit" tooltip><i class="fas fa-home" id="iconbtnplus"></i> Goto Home</a><hr>
+</div>
+
+<div class="">
+  <table class="table table-hover table table-sm table table-bordered" id="mydatatable">
+    <thead align='center' class="theads">
+      <th data-sortable="true">Customer Name</th>
+      <th>Customer Father Name</th>
+      <th>Date of Birth</th>
+      <th>Customer Occupation</th>
+      <th>Customer Email Id</th>
+      <th>Action</th>
+    </thead>
+      {%for customer in customer_list%}
+    <tr align='left'>
+      <td>{{customer.name}}</td>
+      <td>{{customer.father|title}}</td>
+      <td>{{customer.dob}}</td>
+      <td>{{customer.Occupation|title}}</td>
+      <td>{{customer.mailid}}</td>
+      <td align='center'>
+          <a class="" id="iconbtneye" href="/customerdetails/{{customer.id}}" title="View" tooltip><i class="fas fa-eye"></i></a>&nbsp|
+          <a class="" id="iconbtnstate" href="/"title="Statement" tooltip><i class="fas fa-table"></i></a>&nbsp|
+          <a class="" id="iconbtnedit" href="/update/{{customer.id}}" title="Edit" tooltip><i class="fas fa-edit"></i></a>&nbsp|
+          <a class="" id="iconbtnbin" href="/delete/{{customer.id}}"title="Delete" tooltip><i class="fas fa-trash-alt"></i></a></td>
+    </tr>
+      {%endfor%}
+  </table>
+
+</div>
+-->
+
+
+
+
+{%endblock%}

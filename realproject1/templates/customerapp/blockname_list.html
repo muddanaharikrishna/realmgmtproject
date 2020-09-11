@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+  <h1>List of Blocks</h1>
+  <a class="btn btn-success" href="/createblock">Add Block</a>
+  <a class="btn btn-success" href="/">Goto DashBoard</a>
+  <table class="table table-hover table table-striped table table-bordered table table-sm">
+    <thead align='center'>
+      <th>Block Name</th>
+    </thead>
+      {% for blockname in blockname_list %}
+    <tr align='center'>
+      <td>{{blockname.name}}</td>
+      <td><a class="btn btn-primary" href="/blockdetails/{{blockname.id}}">Details</a> <a class="btn btn-warning" href="/updateblock/{{blockname.id}}">Update</a> <a class="btn btn-danger" href="/deleteblock/{{blockname.id}}">Delete</a></td>
+    </tr>
+      {%endfor%}
+  </table>
+{%endblock%}

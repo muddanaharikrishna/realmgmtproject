@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+<div align='center' class="main-box">
+    <h2>Details of {{customer.name}}</h2>
+    <h3>Customer Name : {{customer.name}}</h3>
+    <h3>Name of Father(S/o) : {{customer.father}}</h3>
+    <h3>Customer DOB : {{customer.dob}}</h3>
+    <h3>Occupation : {{customer.Occupation}}</h3>
+    <h3>Email Id : {{customer.mailid}}</h3>
+    <a class="btn btn-success btn-lg" href="/customerlist">Back</a>
+</div>
+{%endblock%}

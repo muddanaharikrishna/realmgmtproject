@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+<section class="text-center mb-4">
+
+  <div class="row wow fadeIn">
+
+    {% for unit in unit_list %}
+    <div class="col-lg-3 col-md-6 mb-4">
+
+      <div class="card">
+
+        <div class="view overlay">
+          <a href="{{unit.name}}">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <div class="card-body text-center">
+          <a href="" class="grey-text">
+            <h5></h5>
+          </a>
+          <h5>
+            <strong>
+              <a href="{{ item.get_absolute_url }}" class="dark-grey-text">{{ unit.name }}
+                <span class="badge badge-pill {{ item.get_label_display }}-color">NEW</span>
+              </a>
+            </strong>
+          </h5>
+
+          <h4 class="font-weight-bold blue-text">
+            <strong>
+            {{ unit.name }}
+            </strong>
+          </h4>
+
+        </div>
+
+      </div>
+
+    </div>
+    {% endfor %}  
+  </div>
+
+</section>
+<!--  <h1>List of Floors</h1>
+  <a class="btn btn-success" href="/createunit">Add Unit</a>
+  <a class="btn btn-success" href="/">Goto DashBoard</a>
+  <table class="table table-hover table table-striped table table-bordered table table-sm">
+    <thead align='center'>
+      <th>Unit Name</th>
+      <th>Actions</th>
+    </thead>
+      {%for unit in unit_list%}
+    <tr align='center'>
+      <td>{{unit.name}}</td>
+      <td><a class="btn btn-primary" href="/unitdetails/{{unit.id}}">Details</a> <a class="btn btn-warning" href="/updateunit/{{unit.id}}">Update</a> <a class="btn btn-danger" href="/deleteunit/{{unit.id}}">Delete</a></td>
+    </tr>
+      {%endfor%}
+  </table> -->
+{%endblock%}

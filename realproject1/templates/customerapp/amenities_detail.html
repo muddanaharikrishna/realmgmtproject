@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+<div align='center'>
+  <h1>Details of {{amenities.name}}</h1><hr>
+    <h2>Name of Amenitie : {{amenities.name}}</h2>
+    <h2>Cost of Amenitie : {{amenities.cost}}</h2>
+    <a class="btn btn-success btn-lg" href="/amenitieslist">Back</a>
+</div>
+{%endblock%}

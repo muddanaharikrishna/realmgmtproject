@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+  <h1>Unit Types</h1>
+  <a class="btn btn-success" href="/createunittype">Add Unit Type</a>
+  <a class="btn btn-success" href="/">Goto DashBoard</a>
+  <table class="table table-hover table table-striped table table-bordered table table-sm">
+    <thead align='center'>
+      <th>Unit Type</th>
+      <th>Actions</th>
+    </thead>
+      {%for unittype in unittype_list%}
+    <tr align='center'>
+      <td>{{unittype.name}}</td>
+      <td><a class="btn btn-primary" href="/unittypedetails/{{unittype.id}}">Details</a> <a class="btn btn-warning" href="/updateunittype/{{unittype.id}}">Update</a> <a class="btn btn-danger" href="/deleteunittype/{{unittype.id}}">Delete</a></td>
+    </tr>
+      {%endfor%}
+  </table>
+{%endblock%}

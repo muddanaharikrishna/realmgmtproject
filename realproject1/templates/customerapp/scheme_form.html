@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+
+  <div class="" align='center'>
+    <h1>Scheme Creation form</h1><hr>
+    <form method="post">
+      {{form.as_p}}
+      {%csrf_token%}
+      <input type="submit" class="btn btn-success btn-lg" name="" value="Submit">
+      <a class="btn btn-danger btn-lg" href="/schemelist">Cancel</a>
+    </form>
+  </div>
+
+{%endblock%}

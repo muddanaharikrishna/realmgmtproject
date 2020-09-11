@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%extends 'customerapp/base.html'%}
+{%block content%}
+
+<div class="container col-sm-5 ">
+  <!-- <div class="jumbotron bg-primary text-white"> -->
+  <!-- <div class="jumbotron bg-dark text-white"> -->
+  <!-- <div class="jumbotron bg-success text-white"> -->
+  <!-- <div class="jumbotron" style="background-color:#CFD8DC;"> -->
+  <!-- <div class="jumbotron" style="background-color:#7ed5f7;"> -->
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-sm-12">
+        <div align='center'>
+          <h1>Details of {{company.name}}</h1><hr>
+            <h2>Company Name : {{company.name}}</h2>
+            <a class="btn btn-primary btn-lg" href="/companylist">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{%endblock%}

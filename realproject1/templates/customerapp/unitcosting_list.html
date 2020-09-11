@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{%extends 'customerapp/index.html'%}
+{%block content%}
+<h3 class="box-title"></h3>
+
+  <div class="container mt-2 mb-2">
+    <div id="toolbar" class="select">
+      <select class="form-control">
+        <option value="">Export Basic</option>
+        <option value="all">Export All</option>
+        <option value="selected">Export Selected</option>
+      </select>
+    </div>
+    <table
+          id="table"
+          data-toggle="table"
+          data-pagination="true"
+          data-search="true"
+          data-search-align="left"
+          data-toolbar="#toolbar"
+          data-show-print="true"
+          data-show-export="true"
+          data-click-to-select="true"
+          data-show-columns="ture"
+          data-show-toggle="ture"
+          data-show-fullscreen="ture"
+          data-show-pagination="ture"
+          data-show-pagination-switch="ture"
+          data-pagination-pre-text="previous"
+          data-pagination-next-text="next"
+          data-pagination-h-align="left"
+          data-pagination-detail-h-align="right"
+          data-page-list="[10, 20, 30, 40, 50, All]">
+      <thead id="table-head">
+        <tr>
+        <!--  <th rowspan="2" data-checkbox="false" data-valign="middle"></th> -->
+          <th colspan="15" data-align="center">UNITS COSTING DETAILS</th>
+        </tr>
+        <tr>
+          <th data-field="state" data-checkbox="true" data-visible="false"></th>
+          <th data-field="flatno" data-sortable="true" data-switchable="false">Flat No</th>
+          <th data-field="cname" data-sortable="true" data-switchable="false">Customer Name</th>
+          <th data-field="bookingdate" data-sortable="true">Date of Booking</th>
+          <th data-field="scheme" data-sortable="true">Scheme</th>
+          <th data-field="sft" data-sortable="true">Sft.</th>
+          <th data-field="face" data-sortable="true">Facing</th>
+          <th data-field="unittype" data-sortable="true">Unit Type</th>
+          <th data-field="price" data-sortable="true">Price/Sft</th>
+          <th data-field="pcharge" data-sortable="true">Premium charges</th>
+          <th data-field="grossprice" data-sortable="true">Gross Price</th>
+          <th data-field="discount" data-sortable="true">Discount/Sft</th>
+          <th data-field="netprice" data-sortable="true">Net Price</th>
+          <th data-field="amenities" data-sortable="true">Amenities</th>
+
+          <th data-sortable="false">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for unitcosting in unitcosting_list%}
+      <tr>
+        <td></td>
+        <td>{{unitcosting.flatno}}</td>
+        <td>{{unitcosting.cname}}</td>
+        <td>{{unitcosting.bookingdate}}</td>
+        <td>{{unitcosting.scheme}}</td>
+        <td>{{unitcosting.sft}}</td>
+        <td>{{unitcosting.face}}</td>
+        <td>{{unitcosting.unittype}}</td>
+        <td>{{unitcosting.price}}</td>
+        <td>{{unitcosting.pcharge}}</td>
+        <td>{{unitcosting.grossprice}}</td>
+        <td>{{unitcosting.discount}}</td>
+        <td>{{unitcosting.netprice}}</td>
+        <td>{{unitcosting.amenities}}</td>
+
+        <td>
+            <a class="" id="iconbtneye" href="/unitcostingdetails/{{unitcosting.id}}" title="View" tooltip><i class="fas fa-eye"></i></a>&nbsp|
+            <a class="" id="iconbtnstate" href="/"title="Statement" tooltip><i class="fas fa-table"></i></a>&nbsp|
+            <a class="" id="iconbtnedit" href="/updateunitcosting/{{unitcosting.id}}" title="Edit" tooltip><i class="fas fa-edit"></i></a>&nbsp|
+            <a class="" id="iconbtnbin" href="/deleteunitcosting/{{unitcosting.id}}"title="Delete" tooltip><i class="fas fa-trash-alt"></i></a></td>
+      </tr>
+        {%endfor%}
+      </tbody>
+      <a class="btn btn-success" id="btn-create" href="/createunitcosting" title="Add Costing" tooltip><i class="fas fa-plus"></i>Add Costing</a>&nbsp|
+      <a class="btn btn-success" id="btn-home" href="/"><i class="fas fa-home-lg-alt"></i> Goto Home</a>
+    </table>
+  </div>
+
+
+<!--
+<div class="">
+  <a class="btn btn-success" id="btn-create" href="/create" title="Create Unit" tooltip><i class="fas fa-plus" id="iconbtnplus"></i>Add Customer</a>
+  <a class="btn btn-success" id="btn-home" href="/" title="Create Unit" tooltip><i class="fas fa-home" id="iconbtnplus"></i> Goto Home</a><hr>
+</div>
+
+<div class="">
+  <table class="table table-hover table table-sm table table-bordered" id="mydatatable">
+    <thead align='center' class="theads">
+      <th data-sortable="true">Customer Name</th>
+      <th>Customer Father Name</th>
+      <th>Date of Birth</th>
+      <th>Customer Occupation</th>
+      <th>Customer Email Id</th>
+      <th>Action</th>
+    </thead>
+      {%for customer in customer_list%}
+    <tr align='left'>
+      <td>{{customer.name}}</td>
+      <td>{{customer.father|title}}</td>
+      <td>{{customer.dob}}</td>
+      <td>{{customer.Occupation|title}}</td>
+      <td>{{customer.mailid}}</td>
+      <td align='center'>
+          <a class="" id="iconbtneye" href="/customerdetails/{{customer.id}}" title="View" tooltip><i class="fas fa-eye"></i></a>&nbsp|
+          <a class="" id="iconbtnstate" href="/"title="Statement" tooltip><i class="fas fa-table"></i></a>&nbsp|
+          <a class="" id="iconbtnedit" href="/update/{{customer.id}}" title="Edit" tooltip><i class="fas fa-edit"></i></a>&nbsp|
+          <a class="" id="iconbtnbin" href="/delete/{{customer.id}}"title="Delete" tooltip><i class="fas fa-trash-alt"></i></a></td>
+    </tr>
+      {%endfor%}
+  </table>
+
+</div>
+-->
+
+{%endblock%}
